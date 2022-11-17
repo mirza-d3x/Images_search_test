@@ -6,7 +6,8 @@ import 'package:http/http.dart';
 import 'api_exception.dart';
 
 class ApiClient {
-  static const String basePath = 'https://pixabay.com/api/?key=31411260-708fe0bc2f05c50b364618f26&q=';
+  static const String basePath =
+      'https://pixabay.com/api/?key=31411260-708fe0bc2f05c50b364618f26&q=';
 
   Future<Response> invokeAPI({
     required String path,
@@ -23,9 +24,8 @@ class ApiClient {
     if (method == 'POST' || method == 'GET' || method == 'PATCH') {
       print("Methode POST OR GET");
       headerParams = {
-        "authorization": "Bearer $token",
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Cookie':
+            '__cf_bm=f5NJ_fRSQCcgr9VbvpJesLOph8N3jgBdOYFPqKbDaPc-1668734695-0-AWN8jROoy9d7boHXhr/55E0/+NaOmGYvHZrv8v05gIiATf5jeZk46tbQRCvRRQsNalOrftHKL9IAmgIakn9OI+Q=; anonymous_user_id=None; csrftoken=eYc4Jcp560TqFlfgVlwcIL3l1iM7JsvKCaINTHOwpJgFy1ozCU8ry2IoxtFjMryS'
       };
     }
     Response response;
